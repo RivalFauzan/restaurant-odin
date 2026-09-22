@@ -110,23 +110,43 @@ eval("{\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleEle
 
 /***/ },
 
-/***/ "./src/greeting.js"
-/*!*************************!*\
-  !*** ./src/greeting.js ***!
-  \*************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   greeting: () => (/* binding */ greeting)\n/* harmony export */ });\nconst greeting = \"hello world\";\n\n//# sourceURL=webpack://restaurant-page/./src/greeting.js?\n}");
-
-/***/ },
-
 /***/ "./src/index.js"
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _greeting_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greeting.js */ \"./src/greeting.js\");\n\n\n\nconsole.log(_greeting_js__WEBPACK_IMPORTED_MODULE_1__.greeting);\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _pages_homepage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/homepage.js */ \"./src/pages/homepage.js\");\n/* harmony import */ var _pages_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/menu.js */ \"./src/pages/menu.js\");\n/* harmony import */ var _pages_about_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/about.js */ \"./src/pages/about.js\");\n\n\n\n\n\nfunction bersihkanKonten() {\n    const wadahContent = document.getElementById(\"content\");\n    if (wadahContent) {\n        wadahContent.innerHTML = \"\"; // Bersihkan konten sebelumnya\n    }\n}\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    ;(0,_pages_homepage_js__WEBPACK_IMPORTED_MODULE_1__.createHomepage)();\n    setupNavigation();\n});\n\nfunction setupNavigation() {\n    const btnHome = document.getElementById(`btn-home`);\n    const btnMenu = document.getElementById(`btn-menu`);\n    const btnAbout = document.getElementById(`btn-about`);\n\n    if (btnHome) {\n        btnHome.addEventListener(\"click\", () => {\n            bersihkanKonten();\n            (0,_pages_homepage_js__WEBPACK_IMPORTED_MODULE_1__.createHomepage)();\n        });\n    }\n\n    if (btnMenu) {\n        btnMenu.addEventListener(\"click\", () => {\n            bersihkanKonten();\n            (0,_pages_menu_js__WEBPACK_IMPORTED_MODULE_2__.loadMenuPage)();\n        });\n    }\n\n    if (btnAbout) {\n        btnAbout.addEventListener(\"click\", () => {\n            bersihkanKonten();\n            (0,_pages_about_js__WEBPACK_IMPORTED_MODULE_3__.loadAboutPage)();\n        });\n    }\n}\n\n\n\n\n// const wadahContent = document.getElementById(\"content\");\n// const tombolNavigasi = document.querySelectorAll(\"nav button\");\n\n// function buatKontenHalaman(namaHalaman) {\n//     const section = document.createElement(\"section\");\n//     section.className = \"page-section\";\n\n//     const judul = document.createElement(\"h2\");\n//     judul.textContent = `Ini adalah halaman ${namaHalaman}`;\n\n//     const deskripsi = document.createElement(\"p\");\n//     deskripsi.textContent = `Konten ini dimasukkan secara dinamis ke dalam #content menggunakan appendChild untuk halaman ${namaHalaman}. Ini adalah konten yang relevan untuk halaman ini.`;\n\n//     section.appendChild(judul);\n//     section.appendChild(deskripsi);\n\n//     return section;\n// }\n\n// tombolNavigasi.forEach((tombol) => {\n//     tombol.addEventListener(\"click\", () => {\n//         const teksTombol = tombol.textContent;\n\n//         if (wadahContent) {\n//             wadahContent.innerHTML = \"\"; // Bersihkan konten sebelumnya\n\n//             const kontenBaru = buatKontenHalaman(teksTombol);\n//             wadahContent.appendChild(kontenBaru);\n\n//         }\n//     });\n// });\n\n// document.addEventListener(\"DOMContentLoaded\", () => {\n//     if (wadahContent) {\n//         wadahContent.appendChild(buatKontenHalaman(\"Home\"));\n//     }\n// });\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?\n}");
+
+/***/ },
+
+/***/ "./src/pages/about.js"
+/*!****************************!*\
+  !*** ./src/pages/about.js ***!
+  \****************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   loadAboutPage: () => (/* binding */ loadAboutPage)\n/* harmony export */ });\n// src/about.js\n\nfunction loadAboutPage() {\n    const wadahContent = document.getElementById('content');\n    if (!wadahContent) return;\n\n    // 1. Buat elemen pembungkus utama halaman about\n    const aboutSection = document.createElement('section');\n    aboutSection.className = 'about-section';\n\n    // 2. Buat judul halaman\n    const judul = document.createElement('h1');\n    judul.textContent = 'Tentang Kami';\n    aboutSection.appendChild(judul);\n\n    // 3. Buat cerita/konten deskripsi\n    const paragraf1 = document.createElement('p');\n    paragraf1.textContent = 'Didirikan sejak tahun 2020, kami berkomitmen untuk selalu menyajikan hidangan dengan bahan baku segar berkualitas terbaik setiap harinya.';\n    \n    const paragraf2 = document.createElement('p');\n    paragraf2.textContent = 'Kenyamanan pelanggan dan cita rasa otentik adalah prioritas utama kami. Terima kasih telah menjadi bagian dari perjalanan kuliner kami.';\n\n    // Satukan paragraf ke dalam section\n    aboutSection.appendChild(paragraf1);\n    aboutSection.appendChild(paragraf2);\n\n    // 4. Masukkan seluruh section ke dalam div#content\n    wadahContent.appendChild(aboutSection);\n}\n\n\n//# sourceURL=webpack://restaurant-page/./src/pages/about.js?\n}");
+
+/***/ },
+
+/***/ "./src/pages/homepage.js"
+/*!*******************************!*\
+  !*** ./src/pages/homepage.js ***!
+  \*******************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createHomepage: () => (/* binding */ createHomepage)\n/* harmony export */ });\nfunction createHomepage() {\n    const wadahContent = document.getElementById(\"content\");\n    \n    if (!wadahContent) return;\n\n    const section = document.createElement(\"section\");\n    section.className = \"hero-section\";\n\n    const judul = document.createElement(\"h2\");\n    judul.textContent = \"selamat datang di restoran kami\";\n\n    const deskripsi = document.createElement(\"p\");\n    deskripsi.textContent = \"Nikmati hidangan lezat dan pengalaman bersantap yang tak terlupakan di restoran kami. Kami menyajikan berbagai pilihan menu yang menggugah selera, mulai dari hidangan tradisional hingga kreasi modern. Setiap hidangan dibuat dengan bahan-bahan segar dan berkualitas tinggi, disiapkan oleh koki berpengalaman untuk memastikan kepuasan Anda. Selamat menikmati waktu Anda bersama kami!\";\n\n    section.appendChild(judul);\n    section.appendChild(deskripsi);\n\n    wadahContent.appendChild(section);\n}\n\n//# sourceURL=webpack://restaurant-page/./src/pages/homepage.js?\n}");
+
+/***/ },
+
+/***/ "./src/pages/menu.js"
+/*!***************************!*\
+  !*** ./src/pages/menu.js ***!
+  \***************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   loadMenuPage: () => (/* binding */ loadMenuPage)\n/* harmony export */ });\nfunction loadMenuPage() {\n    const wadahContent = document.getElementById(\"content\");\n    \n    if (!wadahContent) return;\n\n    const menusection = document.createElement(\"section\");\n    menusection.className = \"menu-section\";\n\n    const judul = document.createElement(\"h1\");\n    judul.textContent = \"Daftar Menu Spesial Kami\";\n    menusection.appendChild(judul);\n\n    const daftarMenu = [\n        { nama: `Nasi Goreng Spesial`, harga: `Rp 25.000`, deskripsi: `Nasi goreng dengan telur, ayam, dan krupuk.`},\n        { nama: `Mie Ayam`, harga: `Rp 20.000`, deskripsi: `Mie dengan potongan ayam dan sayuran.`},\n        { nama: `Sate Ayam`, harga: `Rp 30.000`, deskripsi: `Sate ayam dengan bumbu kacang.`},\n        { nama: `Gado-Gado`, harga: `Rp 22.000`, deskripsi: `Salad sayuran dengan bumbu kacang.`},\n        { nama: `Rendang Daging`, harga: `Rp 35.000`, deskripsi: `Daging sapi dimasak dengan rempah khas Indonesia.`},\n    ];\n\n    daftarMenu.forEach((item) => {\n        const itemDiv = document.createElement(\"div\");\n        itemDiv.className = \"menu-item\";\n\n        const namaMenu = document.createElement(`h2`);\n        namaMenu.textContent = `${item.nama} - ${item.harga}`;\n\n        const deskripsiMenu = document.createElement(`p`);\n        deskripsiMenu.textContent = item.description || item.deskripsi;\n\n        itemDiv.appendChild(namaMenu);\n        itemDiv.appendChild(deskripsiMenu);\n        menusection.appendChild(itemDiv);\n    });\n\n    wadahContent.appendChild(menusection);\n}\n\n//# sourceURL=webpack://restaurant-page/./src/pages/menu.js?\n}");
 
 /***/ }
 

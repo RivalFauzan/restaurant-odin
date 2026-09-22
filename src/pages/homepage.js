@@ -3,7 +3,7 @@ export function createHomepage() {
     
     if (!wadahContent) return;
 
-    const section = document.createElement("section");
+    const section = document.createElement("div");
     section.className = "hero-section";
 
     const judul = document.createElement("h2");
